@@ -1,0 +1,9 @@
+* {
+    color: green;
+}
+
+div {
+    width: 1000px;
+    height: 1000px;
+    background: url('../../image/1.jpg');
+}
