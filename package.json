@@ -6,9 +6,9 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "WEBPACK_ENV=dev webpack-dev-server --inline --port 8088",
-        "dev_win": "set WEBPACK_ENV=dev && webpack-dev-server --inline --port 8088",
+        "dev_win": "set WEBPACK_ENV=dev&&webpack-dev-server --inline --port 8088",
         "dist": "WEBPACK_ENV=online webpack -p",
-        "dist_win": "set WEBPACK_ENV=online && webpack -p"
+        "dist_win": "set WEBPACK_ENV=online&&webpack -p"
     },
     "repository": {
         "type": "git",
@@ -31,5 +31,8 @@
         "webpack": "^1.15.0",
         "webpack-dev-server": "^1.16.5"
     },
-    "dependencies": {}
+    "dependencies": {
+        "hogan": "^1.0.2",
+        "hogan.js": "^3.0.2"
+    }
 }

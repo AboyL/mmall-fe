@@ -52,7 +52,19 @@ var config = {
         new ExtractTextPlugin("css/[name].css"),
         // html模版处理
         new htmlWebpackPlugin(getHtmlConfig("login", "login")),
-    ]
+        // new htmlWebpackPlugin(getHtmlConfig("common", "common")),
+        new htmlWebpackPlugin(getHtmlConfig("index", "index")),
+    ],
+    //  配置别名,我们就可以直接用这个了
+    resolve: {
+        alias: {
+            util: __dirname + "/src/util",
+            page: __dirname + "/src/page",
+            service: __dirname + "/src/service",
+            image: __dirname + "/src/image",
+
+        }
+    }
 };
 if ('dev' === WEBPACK_ENV) {
     config.entry.common.push('webpack-dev-server/client?http://localhost:8088/');
