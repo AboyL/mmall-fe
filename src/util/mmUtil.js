@@ -7,7 +7,7 @@ var conf = {
 // 添加hogan组件用于渲染
 // var Hogan = require("hogan");
 var Hogan = require('hogan.js');
-var netUtil = {
+var mmUtil = {
 
     //网络请求
     request: function(param) {
@@ -55,18 +55,43 @@ var netUtil = {
         }
         return result ? decodeURIComponent(result[2]) : '';
     },
-    // renderHtml: function(htmlTemplate, data) {
-    //     var template = Hogan.compile(htmlTemplate);
-    //     var result = template.render(data);
-    //     return result;
-
-
-    // },
+    // 渲染html模版
     renderHtml: function(htmlTemplate, data) {
         var template = Hogan.compile(htmlTemplate),
             result = template.render(data);
         console.log("object");
         return result;
+    },
+    // 成功提示
+    successHint: function(msg) {
+        alert(msg || "ok");
+    },
+    // 失败提示
+    errorHint: function(msg) {
+        alert(msg || "出现问题啦");
+    },
+    // 验证信息，对非空，字符串，手机号码
+    validate: function(value, type) {
+        value = $.trim(value);
+
+        //验证非空
+        if (type === "notEmpty") {
+            return !!value;
+        }
+        //验证手机号码
+        if (type === "phone") {
+            return /^1\d{10}$/.test(value);
+        }
+        // 验证邮箱
+        if (type === "emaill") {
+            // return /^\w+@\w+(\.\w{2,}){1,3}$/.test(value);
+            return /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(value);
+
+        }
+    },
+    // 跳转主页页面
+    goHome: function() {
+        window.localtion.href = "./index.html";
     },
     //统一跳转登录页面
     doLogin: function() {
@@ -76,4 +101,4 @@ var netUtil = {
 }
 
 //暴露接口
-module.exports = netUtil;
+module.exports = mmUtil;

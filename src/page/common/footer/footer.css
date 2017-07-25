@@ -1,0 +1,10 @@
+footer {
+    background: linear-gradient(#bdbdbd, #6f6f6f);
+    padding: 20px;
+}
+
+footer p {
+    margin: 0 auto;
+    /* vertical-align: middle; */
+    text-align: center;
+}

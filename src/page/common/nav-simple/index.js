@@ -1,0 +1,1 @@
+require("./nav-simple.css")

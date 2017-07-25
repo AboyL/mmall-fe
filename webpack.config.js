@@ -19,8 +19,9 @@ var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 var config = {
     entry: {
         "index": ["./src/./page/index/index.js"],
-        "login": ["./src/./page/login/login.js"],
-        "common": ["./src/./page/common/index.js"]
+        "common": ["./src/./page/common/index.js"],
+        "user-login": ["./src/page/user-login/user-login.js"],
+        "result": ["./src/page/result/result.js"],
     },
     output: {
         path: __dirname + '/dist/',
@@ -40,7 +41,10 @@ var config = {
         }, {
             test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/,
             loader: 'url-loader?limit=100&name=resource/[name].[ext]'
-        }, ]
+        }, {
+            test: /\.string$/,
+            loader: "html-loader"
+        }]
     },
     plugins: [
         //通用模块处理
@@ -51,9 +55,9 @@ var config = {
         // 单独打包css文件
         new ExtractTextPlugin("css/[name].css"),
         // html模版处理
-        new htmlWebpackPlugin(getHtmlConfig("login", "login")),
-        // new htmlWebpackPlugin(getHtmlConfig("common", "common")),
         new htmlWebpackPlugin(getHtmlConfig("index", "index")),
+        new htmlWebpackPlugin(getHtmlConfig("login", "login")),
+        new htmlWebpackPlugin(getHtmlConfig("result", "处理返回结果"))
     ],
     //  配置别名,我们就可以直接用这个了
     resolve: {
@@ -62,7 +66,8 @@ var config = {
             page: __dirname + "/src/page",
             service: __dirname + "/src/service",
             image: __dirname + "/src/image",
-
+            node_nodules: __dirname + "/node_modules",
+            font_awesome: __dirname + "/node_modules/font-awesome",
         }
     }
 };

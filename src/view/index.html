@@ -2,18 +2,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://cdn.bootcss.com/jquery/2.0.1/jquery.min.js"></script>
+    <%= require("html-loader!./layout/head-common.html") %>
+        <title>
+            <%= htmlWebpackPlugin.options.title %>
+        </title>
 </head>
 
 <body>
-    <p>啊哈哈哈哈</p>
-    <div></div>
-    <!-- <img src="../../image/1.jpg " alt=" "> -->
-
+    <!-- 头部  -->
+    <%= require("html-loader!./layout/nav.html") %>
+        <%= require("html-loader!./layout/header.html") %>
+            <!-- 侧边  -->
+            <div class="page-wrap w">
+                <!--w 还有清除浮动的功能 因为hide-->
+                <%= require("html-loader!./layout/nav-side.html") %>
+                    <div class="content with-nav">
+                        test
+                    </div>
+            </div>
+            <%=   require("html-loader!./layout/footer.html")    %>
 </body>
 
 </html>

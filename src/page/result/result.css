@@ -1,0 +1,13 @@
+.page-wrap {
+    padding: 20px;
+    min-height: 455px;
+    text-align: center;
+}
+
+.page-wrap .resultCon {
+    display: none;
+}
+
+.page-wrap .result-title {
+    margin: 20px;
+}
