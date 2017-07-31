@@ -20,15 +20,20 @@ var config = {
     entry: {
         "index": ["./src/./page/index/index.js"],
         "common": ["./src/./page/common/index.js"],
-        "user-login": ["./src/page/user-login/user-login.js"],
+        "login": ["./src/page/user-login/user-login.js"],
+        "register": ["./src/page/user-register/user-register.js"],
+        "passwordReset": ["./src/page/passwordReset/passwordReset.js"],
+        "user-center": ["./src/page/user-center/user-center.js"],
+        "user-center-updata": ["./src/page/user-center-updata/user-center-updata.js"],
+        "user-pass-updata": ["./src/page/user-pass-updata/user-pass-updata.js"],
         "result": ["./src/page/result/result.js"],
     },
     output: {
         path: __dirname + '/dist/',
-        publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.happymmall.com/mmall-fe/dist/',
+        // publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.happymmall.com/mmall-fe/dist/',
         // publicPath: 'dev' === WEBPACK_ENV ? '../' : '//s.happymmall.com/mmall-fe/dist/',
 
-        // publicPath: "/dist/",//其实这个也可以,但是那个是我们的最终上线版本更好用
+        publicPath: "/dist/", //其实这个也可以,但是那个是我们的最终上线版本更好用
         filename: "js/[name].js"
     },
     externals: {
@@ -55,8 +60,13 @@ var config = {
         // 单独打包css文件
         new ExtractTextPlugin("css/[name].css"),
         // html模版处理
-        new htmlWebpackPlugin(getHtmlConfig("index", "index")),
-        new htmlWebpackPlugin(getHtmlConfig("login", "login")),
+        new htmlWebpackPlugin(getHtmlConfig("index", "首页")),
+        new htmlWebpackPlugin(getHtmlConfig("login", "登录")),
+        new htmlWebpackPlugin(getHtmlConfig("register", "注册")),
+        new htmlWebpackPlugin(getHtmlConfig("passwordReset", "找回密码")),
+        new htmlWebpackPlugin(getHtmlConfig("user-center", "个人中心")),
+        new htmlWebpackPlugin(getHtmlConfig("user-center-updata", "修改个人信息")),
+        new htmlWebpackPlugin(getHtmlConfig("user-pass-updata", "修改密码")),
         new htmlWebpackPlugin(getHtmlConfig("result", "处理返回结果"))
     ],
     //  配置别名,我们就可以直接用这个了

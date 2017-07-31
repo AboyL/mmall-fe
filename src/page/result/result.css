@@ -1,11 +1,16 @@
 .page-wrap {
     padding: 20px;
-    min-height: 455px;
     text-align: center;
+    position: relative;
 }
 
 .page-wrap .resultCon {
     display: none;
+    margin: auto 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .page-wrap .result-title {

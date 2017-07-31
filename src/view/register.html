@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%= require("html-loader!./layout/head-common.html") %>
+
+        <title>Document</title>
+</head>
+
+<body>
+    <%=   require("html-loader!./layout/nav-simple.html")    %>
+        <div class="page-wrap">
+            <div class="user-register">
+                <p>用户注册</p>
+                <div class="error-item">
+                    <label for="user-error" class="fa fa-minus-circle error-icon"></label>
+                    <p class="error-msg">error</p>
+                </div>
+                <div class="register-item">
+                    <label for="user-name" class="fa fa-user"></label>
+                    <input type="text" id="user-name" placeholder="请输入用户名">
+                </div>
+                <div class="register-item">
+                    <label for="user-password" class="fa fa-lock"></label>
+                    <input type="password" id="user-password" placeholder="输入密码">
+                </div>
+                <div class="register-item">
+                    <label for="user-password-comfirm" class="fa fa-lock"></label>
+                    <input type="password" id="user-password-comfirm" placeholder="请确认密码">
+                </div>
+                <div class="register-item">
+                    <label for="user-email" class="fa fa-envelope"></label>
+                    <input type="text" id="email" placeholder="请输入邮箱地址">
+                </div>
+                <div class="register-item">
+                    <label for="user-phone" class="fa fa-phone"></label>
+                    <input type="text" id="phone" placeholder="请输入手机号">
+                </div>
+                <div class="register-item">
+                    <label for="user-password" class="fa fa-question"></label>
+                    <input type="text" id="question" placeholder="请输入问题">
+                </div>
+                <div class="register-item">
+                    <label for="user-password" class="fa fa-key"></label>
+                    <input type="text" id="answer" placeholder="请输入问题答案">
+                </div>
+                <button type="sumbit" class="btn" id="submit">立即注册</button></button>
+                <div class=" link-item ">
+                    <a href="./register.html " class="link ">已有帐号，立即登录</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <%=   require("html-loader!./layout/footer.html")    %>
+</body>
+
+</html>

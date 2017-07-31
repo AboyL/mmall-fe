@@ -1,4 +1,4 @@
-require("./nav.css")
+require("./nav.css");
 
 var mmUtil = require("util/mmutil.js");
 var user_service = require("service/user-service.js");
@@ -16,7 +16,7 @@ var nav = {
     bind: function() {
         // 处理登录
         $(".js-login").click(function() {
-            mmutil.doLogin();
+            mmUtil.doLogin();
         });
         //处理注册
         $(".js-register").click(function() {
@@ -35,7 +35,8 @@ var nav = {
     //加载用户信息
     loadUserInfo: function() {
         user_service.checkLogin(function(res) {
-            $(".user.not-login").hide().siblings('.user.login').show().find('userName').text(res.userName)
+            $(".notLogin").hide();
+            $('.login').show().find('.username').text(res.data.username);
         }, function(errMsg) {
             // do nothing
         })

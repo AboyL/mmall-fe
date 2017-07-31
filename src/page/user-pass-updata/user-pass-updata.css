@@ -1,0 +1,18 @@
+.panel {
+    background-color: white;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.panel .title {
+    border-bottom: 1px solid red;
+    padding-bottom: 10px;
+}
+
+.panel>.item {
+    margin: 15px;
+}
+
+.panel input {
+    font-size: inherit;
+}

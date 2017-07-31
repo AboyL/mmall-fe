@@ -38,6 +38,14 @@ input[type="checkbox"] {
 }
 
 
+/* 给外部容器设置最低高度  */
+
+.page-wrap {
+    min-height: 455px;
+    box-sizing: content-box;
+}
+
+
 /* 全局通用样式  */
 
 
@@ -96,4 +104,15 @@ input[type="checkbox"] {
     border: 2px solid #333;
     background: url("../../image/1.jpg") no-repeat;
     opacity: 0.6;
+}
+
+
+/* 面包屑导航  */
+
+.crumbs {
+    color: #999;
+    font-size: 19px;
+    background-color: #c1c1c1;
+    padding: 10px 100px;
+    border-top: 2px solid #ff170b;
 }

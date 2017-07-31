@@ -19,5 +19,5 @@ var Uilt = require("util/mmUtil.js");
 //     ss: "mm",
 // }
 
-console.log(Uilt.validate("    sds_ds_d.sd@qq.com!!!  ", "emaill"))
+console.log(Uilt.validate("    sds_ds_d.sd@qq.com!!!  ", "email"))
     // console.log(netUilt.renderHtml(htmlTeplate, data));
