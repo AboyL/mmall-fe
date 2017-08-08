@@ -1,6 +1,6 @@
 require("./nav-side.css");
 
-var mmUtil = require('util/mmUtil.js');
+var mm = require('util/mm.js');
 var template = require("./nav-side.string");
 var navSide = {
     option: {
@@ -28,7 +28,7 @@ var navSide = {
 
         }
         // 渲染html
-        var side = mmUtil.renderHtml(template, {
+        var side = mm.renderHtml(template, {
             navList: this.option.navList
         });
         $('.nav-side').html(side);

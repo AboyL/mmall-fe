@@ -1,12 +1,13 @@
 require("./header.css");
 
-var mmUtil = require('util/mmUtil.js');
+var mm = require('util/mm.js');
 var header = {
     init: function() {
         this.bindEvent();
+        this.onLoad();
     },
     onLoad: function() {
-        var keyword = mmUtil.getUrlParam('keyword');
+        var keyword = mm.getUrlParam('keyword');
         // 回填输入框
         if (keyword) {
             $('#search-input').val(keyword);
@@ -35,7 +36,7 @@ var header = {
             window.location.href = './list.html?keyword=' + keyword;
         } else {
             // 跳回主页
-            mmUtil.goHome();
+            mm.goHome();
         }
     }
 }

@@ -3,7 +3,7 @@ require("../common/nav-simple/nav-simple.js");
 require("./user-register.css");
 
 
-var mmUtil = require("util/mmUtil.js");
+var mm = require("util/mm.js");
 var userService = require("service/user-service.js");
 
 // 错误处理
@@ -76,12 +76,12 @@ var register = {
             status: false,
             msg: ''
         };
-        if (!mmUtil.validate(data.username, "notEmpty")) {
+        if (!mm.validate(data.username, "notEmpty")) {
             result.msg = "用户名不能为空";
             error.show(result.msg);
             return result;
         };
-        if (!mmUtil.validate(data.pssword, "notEmpty")) {
+        if (!mm.validate(data.pssword, "notEmpty")) {
             result.msg = "密码不能为空";
             error.show(result.msg);
             return result;
@@ -99,25 +99,25 @@ var register = {
             return result;
         };
         // 验证手机号
-        if (!mmUtil.validate(data.phone, "phone")) {
+        if (!mm.validate(data.phone, "phone")) {
             result.msg = "请检查手机号码";
             error.show(result.msg);
             return result;
         };
         // 验证邮箱
-        if (!mmUtil.validate(data.email, "email")) {
+        if (!mm.validate(data.email, "email")) {
             result.msg = "请检查邮箱";
             error.show(result.msg);
             return result;
         };
         // 验证问题
-        if (!mmUtil.validate(data.question, "notEmpty")) {
+        if (!mm.validate(data.question, "notEmpty")) {
             result.msg = "问题不能为空";
             error.show(result.msg);
             return result;
         };
         // 验证回答
-        if (!mmUtil.validate(data.answer, "notEmpty")) {
+        if (!mm.validate(data.answer, "notEmpty")) {
             result.msg = "答案不能为空";
             error.show(result.msg);
             return result;

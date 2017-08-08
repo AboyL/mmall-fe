@@ -1,0 +1,46 @@
+<!-- 放置图片和其他信息  -->
+<div class="intro-con">
+    <!-- 放置图片信息  -->
+    <div class="img-con item">
+        <div class="mainImg">
+            <img class="m-img" src="{{imageHost}}{{mainImage}}" alt="{{name}}">
+        </div>
+        <div class="samllImgList">
+            {{#subImages}}
+            <img class="s-img" src="{{imageHost}}{{.}}" alt="{{name}}"> {{/subImages}}
+
+        </div>
+    </div>
+    <!-- 放置其他信息  -->
+    <div class="other item">
+        <div class="name o-item">{{name}}</div>
+        <div class="subtitle o-item">{{subtitle}}</div>
+        <div class="price o-item">价格:￥{{price}}</div>
+        <div class="inventory o-item">库存:{{stock}}</div>
+        <div class="cart o-item">
+            <span class="text">数量：</span>
+            <input id="count" type="text" value="1" readonly>
+            <span class="calculate">
+                                <span class="add Cbtn">+</span>
+            <span class="minus Cbtn">-</span>
+            </span>
+            {{^stock}}
+            <div class="cart-btn btn">暂时无货</div>
+            {{/stock}}
+            <!-- <div class="submit btn">加入购物车</div> -->
+            {{#stock}}
+            <div class="submit cart-btn btn">加入购物车</div>
+            {{/stock}}
+        </div>
+    </div>
+</div>
+<!-- 具体详情  -->
+<div class="detail-con">
+    <div class="tab-list">
+        <div class="tab-item active">商品详情</div>
+    </div>
+    <div class="detail">
+        {{{detail}}}
+    </div>
+
+</div>

@@ -19,6 +19,8 @@ var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 var config = {
     entry: {
         "index": ["./src/./page/index/index.js"],
+        "list": ["./src/./page/list/list.js"],
+        "detail": ["./src/./page/detail/detail.js"],
         "common": ["./src/./page/common/index.js"],
         "login": ["./src/page/user-login/user-login.js"],
         "register": ["./src/page/user-register/user-register.js"],
@@ -61,6 +63,8 @@ var config = {
         new ExtractTextPlugin("css/[name].css"),
         // html模版处理
         new htmlWebpackPlugin(getHtmlConfig("index", "首页")),
+        new htmlWebpackPlugin(getHtmlConfig("list", "商品列表")),
+        new htmlWebpackPlugin(getHtmlConfig("detail", "商品详情")),
         new htmlWebpackPlugin(getHtmlConfig("login", "登录")),
         new htmlWebpackPlugin(getHtmlConfig("register", "注册")),
         new htmlWebpackPlugin(getHtmlConfig("passwordReset", "找回密码")),
@@ -84,4 +88,6 @@ var config = {
 if ('dev' === WEBPACK_ENV) {
     config.entry.common.push('webpack-dev-server/client?http://localhost:8088/');
 }
+
+
 module.exports = config;

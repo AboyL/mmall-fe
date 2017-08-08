@@ -1,7 +1,7 @@
 require("./passwordReset.css");
 require("../common/nav-simple/nav-simple.css");
 
-var mmUtil = require("util/mmUtil.js");
+var mm = require("util/mm.js");
 var userService = require("service/user-service.js");
 
 // 错误处理

@@ -1,0 +1,11 @@
+{{#list}}
+<div class="product">
+
+    <a class="link" href="./detail.html?productId={{id}}" target="_blank">    
+     <img src="{{imageHost}}{{mainImage}}" alt="产品">
+     <div class="price">￥{{price}}</div>
+    <span class="productName">{{name}}</span>
+    </a>
+   
+</div>
+{{/list}}

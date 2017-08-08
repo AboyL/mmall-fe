@@ -1,13 +1,12 @@
-// 用于请求网络数据的工具
-
+// 各种工具
 //服务器地址
 var conf = {
-    serverHost: ''
+    serverHost: ""
 };
 // 添加hogan组件用于渲染
 // var Hogan = require("hogan");
 var Hogan = require('hogan.js');
-var mmUtil = {
+var mm = {
 
     //网络请求
     request: function(param) {
@@ -96,4 +95,4 @@ var mmUtil = {
 }
 
 //暴露接口
-module.exports = mmUtil;
+module.exports = mm;

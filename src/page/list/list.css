@@ -1,0 +1,79 @@
+.list {
+    overflow: hidden;
+}
+
+.page-wrap .sort-con {
+    /* 如不是设置为0有可能出现两个inline-block元素之间有缝隙 */
+    font-size: 0px;
+    margin-top: 10px;
+}
+
+.page-wrap .sort-con .sort-item {
+    display: inline-block;
+    position: relative;
+    margin-right: -1px;
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid #afafaf;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.page-wrap .sort-con .sort-item.active {
+    background-color: #c60023;
+    border: 1px solid #c60023;
+    color: #fff;
+}
+
+.page-wrap .sort-con .sort-item .fa-sort-desc {
+    position: absolute;
+    right: 5px;
+    bottom: 7px;
+}
+
+.page-wrap .sort-con .sort-item.desc .fa-sort-desc {
+    opacity: 0.6;
+}
+
+.page-wrap .sort-con .sort-item.asc .fa-sort-asc {
+    opacity: 0.6;
+}
+
+
+/* 商品  */
+
+.list .product {
+    box-sizing: border-box;
+    float: left;
+    margin: 10px 10px 20px 0;
+    padding: 10px;
+    width: 200px;
+    height: 290px;
+    font-size: 10px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.list .product:hover {
+    box-shadow: 3px 3px 2px #cecece;
+}
+
+.list .product a:hover {
+    color: #999;
+}
+
+.list .product img {
+    margin: 10px auto;
+    width: 180px;
+    height: 200px;
+}
+
+.list .product .price {
+    color: red;
+    margin-bottom: 3px;
+}
+
+.list .product .productName {
+    height: 20px;
+    line-height: 20px;
+}

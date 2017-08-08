@@ -1,0 +1,27 @@
+<!-- 上一页  -->
+{{#prePage}}
+<div class="paging-item" data-value={{prePage}}>上一页</div>
+{{/prePage}} {{^prePage}}
+<div class="paging-item disabled">上一页</div>
+{{/prePage}}
+<!-- 返回第一页  -->
+<div class="paging-item" data-value="1">首页</div>
+<!-- 数字  -->
+{{#list}} {{#active}}
+<div class="paging-item active" data-value={{value}}>{{value}}</div>
+
+{{/active}} {{^active}}
+<div class="paging-item" data-value={{value}}>{{value}}</div>
+
+{{/active}}{{/list}}
+
+<!-- 下一页  -->
+{{#nextPage}}
+<div class="paging-item" data-value={{nextPage}}>下一页</div>
+{{/nextPage}} {{^nextPage}}
+<div class="paging-item disabled">下一页</div>
+{{/nextPage}}
+<!-- 返回最后一页  -->
+<div class="paging-item" data-value={{pages}}>最后一页</div>
+<!-- 总显示  -->
+<span class="text">第{{pageNum}}/{{pages}}页</span>

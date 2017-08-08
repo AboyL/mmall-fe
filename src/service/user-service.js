@@ -1,11 +1,11 @@
-mmUtil = require("../util/mmUtil.js");
+mm = require("../util/mm.js");
 
 var user_service = {
 
     // 登录
     login: function(userdata, resolve, reject) {
-        mmUtil.request({
-            url: mmUtil.getServerUrl('/user/login.do'),
+        mm.request({
+            url: mm.getServerUrl('/user/login.do'),
             data: userdata,
             method: 'POST',
             success: resolve,
@@ -14,8 +14,8 @@ var user_service = {
     },
     // 注册
     register: function(userdata, resolve, reject) {
-        mmUtil.request({
-            url: mmUtil.getServerUrl('/user/register.do'),
+        mm.request({
+            url: mm.getServerUrl('/user/register.do'),
             data: userdata,
             method: 'POST',
             success: resolve,
@@ -24,8 +24,8 @@ var user_service = {
     },
     // 检查登录
     checkLogin: function(resolve, reject) {
-        mmUtil.request({
-            url: mmUtil.getServerUrl('/user/get_user_info.do'),
+        mm.request({
+            url: mm.getServerUrl('/user/get_user_info.do'),
             method: 'POST',
             success: resolve,
             error: reject
@@ -33,8 +33,8 @@ var user_service = {
     },
     // 检查用户名是否存在
     checkUsername: function(username, resolve, reject) {
-        mmUtil.request({
-            url: mmUtil.getServerUrl('/user/check_valid.do'),
+        mm.request({
+            url: mm.getServerUrl('/user/check_valid.do'),
             data: {
                 type: "username",
                 str: username
@@ -46,8 +46,8 @@ var user_service = {
     },
     // 得到问题
     getQuestion: function(userdata, resolve, reject) {
-        mmUtil.request({
-            url: mmUtil.getServerUrl('/user/forget_get_question.do'),
+        mm.request({
+            url: mm.getServerUrl('/user/forget_get_question.do'),
             data: userdata,
             method: "post",
             success: resolve,
@@ -56,8 +56,8 @@ var user_service = {
     },
     // 检查答案
     checkAnwser: function(userdata, resolve, reject) {
-        mmUtil.request({
-            url: mmUtil.getServerUrl('/user/forget_check_answer.do'),
+        mm.request({
+            url: mm.getServerUrl('/user/forget_check_answer.do'),
             data: userdata,
             method: "post",
             success: resolve,
@@ -66,8 +66,8 @@ var user_service = {
     },
     // 重置密码
     reset: function(userdata, resolve, reject) {
-        mmUtil.request({
-            url: mmUtil.getServerUrl('/user/forget_reset_password.do'),
+        mm.request({
+            url: mm.getServerUrl('/user/forget_reset_password.do'),
             data: userdata,
             method: "post",
             success: resolve,
@@ -76,16 +76,16 @@ var user_service = {
     },
     // 获取用户信息
     getUserInfo: function(resolve, reject) {
-        mmUtil.request({
-            url: mmUtil.getServerUrl('/user/get_user_info.do'),
+        mm.request({
+            url: mm.getServerUrl('/user/get_user_info.do'),
             method: "post",
             success: resolve,
             error: reject
         })
     },
     updataUserInfo: function(data, resolve, reject) {
-        mmUtil.request({
-            url: mmUtil.getServerUrl('/user/update_information.do'),
+        mm.request({
+            url: mm.getServerUrl('/user/update_information.do'),
             data: data,
             method: "post",
             success: resolve,
@@ -93,8 +93,8 @@ var user_service = {
         })
     },
     passwordUpdata: function(data, resolve, reject) {
-        mmUtil.request({
-            url: mmUtil.getServerUrl('/user/reset_password.do'),
+        mm.request({
+            url: mm.getServerUrl('/user/reset_password.do'),
             data: data,
             method: "post",
             success: resolve,
@@ -102,8 +102,8 @@ var user_service = {
         })
     }, // 处理登出
     loginOut: function(resolve, reject) {
-        mmUtil.request({
-            url: mmUtil.getServerUrl('/user/logout.do'),
+        mm.request({
+            url: mm.getServerUrl('/user/logout.do'),
             method: 'POST',
             success: resolve,
             error: reject

@@ -99,10 +99,10 @@ input[type="checkbox"] {
 .loading {
     margin: 10px auto;
     display: block;
-    width: 438px;
-    height: 300px;
-    border: 2px solid #333;
-    background: url("../../image/1.jpg") no-repeat;
+    width: 85px;
+    height: 81px;
+    /* border: 2px solid #333; */
+    background: url("../../image/icon/loading.gif") no-repeat;
     opacity: 0.6;
 }
 

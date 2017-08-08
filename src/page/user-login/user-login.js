@@ -1,7 +1,7 @@
 require("../common/nav-simple/nav-simple.js");
 require("./user-login.css")
 
-var mmUtil = require("util/mmUtil.js");
+var mm = require("util/mm.js");
 var userService = require("service/user-service.js");
 
 // 错误处理
@@ -43,7 +43,7 @@ var login = {
             // 验证通过，提交
             userService.login(data, function(res) {
                 // 跳回以前的页面
-                window.location.href = mmUtil.getUrlParam("redirect") || "./index.html";
+                window.location.href = mm.getUrlParam("redirect") || "./index.html";
             }, function() {
                 alert("密码或用户名错误");
             });
@@ -58,12 +58,12 @@ var login = {
             status: false,
             msg: ''
         };
-        if (!mmUtil.validate(data.username, "notEmpty")) {
+        if (!mm.validate(data.username, "notEmpty")) {
             result.msg = "用户名不能位空";
             error.show(result.msg);
             return result;
         };
-        if (!mmUtil.validate(data.password, "notEmpty")) {
+        if (!mm.validate(data.password, "notEmpty")) {
             result.msg = "密码不能为空";
             error.show(result.msg);
             return result;

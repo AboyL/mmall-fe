@@ -1,6 +1,6 @@
 require("./user-center-updata.css");
 var navSide = require("../common/nav-side/nav-side.js")
-var mmUtil = require("util/mmUtil.js");
+var mm = require("util/mm.js");
 var userService = require("service/user-service.js");
 var template = require("./user-center-updata.string");
 var userCenterUpdata = {
@@ -25,13 +25,13 @@ var userCenterUpdata = {
         var _this = this;
         userService.getUserInfo(function(res) {
             console.log(res);
-            userInfoHtml = mmUtil.renderHtml(template, res.data);
+            userInfoHtml = mm.renderHtml(template, res.data);
             $('.panel').html(userInfoHtml);
             // 在加载完成以后进行函数绑定,要注意这个不能写在init那里
             _this.bindEvent();
 
         }, function(errMsg) {
-            mmUtil.errorHint(errMsg);
+            mm.errorHint(errMsg);
         });
     },
     updataUserInfo: function() {
@@ -48,10 +48,10 @@ var userCenterUpdata = {
                 // 更新成功，返回个人中心
                 window.location.href = "./user-center.html"
             }, function(errMsg) {
-                mmUtil.errorHint(errMsg);
+                mm.errorHint(errMsg);
             });
         } else {
-            mmUtil.errorHint("出现错误");
+            mm.errorHint("出现错误");
         }
     },
     validate: function(data) {
@@ -59,26 +59,26 @@ var userCenterUpdata = {
             status: false,
             msg: ''
         };
-        if (!mmUtil.validate(data.phone, "phone")) {
+        if (!mm.validate(data.phone, "phone")) {
             result.msg = "手机号格式不正确";
-            mmUtil.errorHint(result.msg);
+            mm.errorHint(result.msg);
             return result;
         };
-        if (!mmUtil.validate(data.email, "email")) {
+        if (!mm.validate(data.email, "email")) {
             result.msg = "邮件格式不正确";
-            mmUtil.errorHint(result.msg);
+            mm.errorHint(result.msg);
             return result;
         };
-        if (!mmUtil.validate(data.question, "notEmpty")) {
+        if (!mm.validate(data.question, "notEmpty")) {
             alert(1);
             result.msg = "不能为空";
-            mmUtil.errorHint(result.msg);
+            mm.errorHint(result.msg);
             return result;
         };
-        if (!mmUtil.validate(data.answer, "notEmpty")) {
+        if (!mm.validate(data.answer, "notEmpty")) {
             alert(data.anwser);
             result.msg = "不能为空";
-            mmUtil.errorHint(result.msg);
+            mm.errorHint(result.msg);
             return result;
         };
         // 通过验证

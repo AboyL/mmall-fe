@@ -1,6 +1,6 @@
 require("./user-center.css");
 var navSide = require("../common/nav-side/nav-side.js")
-var mmUtil = require("util/mmUtil.js");
+var mm = require("util/mm.js");
 var userService = require("service/user-service.js");
 var template = require("./user-center.string");
 var userCenter = {
@@ -17,10 +17,10 @@ var userCenter = {
         var userInfoHtml = '';
         userService.getUserInfo(function(res) {
             console.log(res);
-            userInfoHtml = mmUtil.renderHtml(template, res.data);
+            userInfoHtml = mm.renderHtml(template, res.data);
             $('.panel').html(userInfoHtml);
         }, function(errMsg) {
-            mmUtil.errorHint(errMsg);
+            mm.errorHint(errMsg);
         });
     },
 }

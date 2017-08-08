@@ -1,6 +1,6 @@
 require("./nav.css");
 
-var mmUtil = require("util/mmutil.js");
+var mm = require("util/mm.js");
 var user_service = require("service/user-service.js");
 var cart_service = require("service/cart-service.js");
 var nav = {
@@ -16,7 +16,7 @@ var nav = {
     bind: function() {
         // 处理登录
         $(".js-login").click(function() {
-            mmUtil.doLogin();
+            mm.doLogin();
         });
         //处理注册
         $(".js-register").click(function() {
@@ -27,7 +27,7 @@ var nav = {
             user_service.loginOut(function() {
                 window.location.reload();
             }, function() {
-                mmUtil.errorHint();
+                mm.errorHint();
             });
         })
     },

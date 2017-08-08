@@ -1,23 +1,19 @@
-var Uilt = require("util/mmUtil.js");
-// netUilt.request({
-//     // url: "http://happymmall.com/product/list.do?keyword=1",//不可以
-//     url: "/product/list.do?keyword=1", //可以
+require("./index.css");
+var mm = require("util/mm.js");
+var tepalateBanner = require("./banner.string");
+// var tepalateBanner = require("./banner2.string");
+require("util/slider/index.js");
 
-//     success: function(res) {
-//         console.log(res);
-//         console.log("success");
-//     },
-//     error: function(err) {
-//         console.log(err);
-//     }
-// });
+$(function() {
+    bannerHmtl = mm.renderHtml(tepalateBanner);
+    $(".banner-con").html(bannerHmtl);
+    var unslider = $('.banner').unslider({
+        dots: true
+    });
+    $('.unslider-arrow').click(function() {
+        var fn = this.className.split(' ')[1];
 
-// netUilt.getUrlParam("test");
-// var htmlTeplate = "<div>{{data}}</div><p>{{ss}}</p>";
-// var data = {
-//     data: "test",
-//     ss: "mm",
-// }
-
-console.log(Uilt.validate("    sds_ds_d.sd@qq.com!!!  ", "email"))
-    // console.log(netUilt.renderHtml(htmlTeplate, data));
+        //  Either do unslider.data('unslider').next() or .prev() depending on the className
+        unslider.data('unslider')[fn]();
+    });
+});

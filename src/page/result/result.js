@@ -1,10 +1,10 @@
 require("./result.css");
 require("page/common/nav-simple/nav-simple.css");
 
-var mmUtil = require('util/mmUtil.js');
+var mm = require('util/mm.js');
 
 $(function() {
-    var type = mmUtil.getUrlParam("type") || "default";
+    var type = mm.getUrlParam("type") || "default";
     // var $Element = $('.' + type + '-success').show();
     var $Element = $('.resultCon.' + type + '-success').show();
 })
