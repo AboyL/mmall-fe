@@ -1,0 +1,72 @@
+<!-- cart-head  -->
+<div class="cart-head">
+    <div class="c-select-all c-item">
+        {{#allChecked}}
+        <input type="checkbox" checked><span>全选</span> {{/allChecked}} {{^allChecked}}
+        <input type="checkbox"><span>全选</span> {{/allChecked}}
+    </div>
+    <div class="c-product-info c-item">
+        <span>商品信息</span>
+    </div>
+    <div class="c-price c-item">
+        <span>单价</span>
+    </div>
+    <div class="c-number c-item">
+        <span>数量</span>
+    </div>
+    <div class="c-total c-item">
+        <span>总价</span>
+    </div>
+    <div class="c-operate c-item">
+        <span>操作</span>
+    </div>
+</div>
+<!-- cart-list  -->
+
+<div class="cart-list">
+    {{#cartProductVoList}}
+    <div class="list-item" data-product-id="{{productId}}">
+        <div class="c-select c-item">
+            {{#productChecked}}
+            <input type="checkbox" checked> {{/productChecked}} {{^productChecked}} <input type="checkbox"> {{/productChecked}}
+        </div>
+        <div class="c-img c-item">
+            <img src="{{imageHost}}{{productMainImage}}" alt="{{productName}}">
+        </div>
+        <div class="c-product-info c-item">
+            <a class="info" href="./index.html">{{productName}}</a>
+        </div>
+        <div class="c-price c-item">
+            <span>￥{{productPrice}}</span>
+        </div>
+        <div class="c-number c-item">
+            <div class=" c-btn minus ">-</div>
+            <input type="text " value="{{quantity}} " readonly data-max="{{productStock}}">
+            <div class="c-btn add ">+</div>
+        </div>
+        <div class="c-total c-item ">
+            <span>￥{{productTotalPrice}}</span>
+        </div>
+        <div class="c-operate c-item ">
+            <span class="delete">删除</span>
+        </div>
+    </div>
+    {{/cartProductVoList}}
+
+</div>
+<!-- cart-footer  -->
+<div class="cart-footer ">
+    <div class="c-select-all c-item ">
+        {{#allChecked}}
+        <input type="checkbox" checked/> {{/allChecked}} {{^allChecked}}
+        <input type="checkbox" /> {{/allChecked}}
+    </div>
+    <div class="delete-all c-item ">
+        <span class="fa fa-trash-o ">   <i class="delete-checked">删除选中</i> </span>
+    </div>
+    <div class="total c-item ">
+        <span>总价:￥{{cartTotalPrice}}</span>
+    </div>
+    <div class="submit btn c-item ">去结账</div>
+</div>
+</div>

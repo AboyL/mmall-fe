@@ -18,10 +18,11 @@ var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 
 var config = {
     entry: {
+        "common": ["./src/./page/common/index.js"],
         "index": ["./src/./page/index/index.js"],
         "list": ["./src/./page/list/list.js"],
         "detail": ["./src/./page/detail/detail.js"],
-        "common": ["./src/./page/common/index.js"],
+        "cart": ["./src/./page/cart/cart.js"],
         "login": ["./src/page/user-login/user-login.js"],
         "register": ["./src/page/user-register/user-register.js"],
         "passwordReset": ["./src/page/passwordReset/passwordReset.js"],
@@ -32,9 +33,6 @@ var config = {
     },
     output: {
         path: __dirname + '/dist/',
-        // publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.happymmall.com/mmall-fe/dist/',
-        // publicPath: 'dev' === WEBPACK_ENV ? '../' : '//s.happymmall.com/mmall-fe/dist/',
-
         publicPath: "/dist/", //其实这个也可以,但是那个是我们的最终上线版本更好用
         filename: "js/[name].js"
     },
@@ -65,6 +63,7 @@ var config = {
         new htmlWebpackPlugin(getHtmlConfig("index", "首页")),
         new htmlWebpackPlugin(getHtmlConfig("list", "商品列表")),
         new htmlWebpackPlugin(getHtmlConfig("detail", "商品详情")),
+        new htmlWebpackPlugin(getHtmlConfig("cart", "购物车")),
         new htmlWebpackPlugin(getHtmlConfig("login", "登录")),
         new htmlWebpackPlugin(getHtmlConfig("register", "注册")),
         new htmlWebpackPlugin(getHtmlConfig("passwordReset", "找回密码")),

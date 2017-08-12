@@ -45,9 +45,9 @@ var nav = {
     //加载购物车信息
     loadCartInfo: function() {
         cart_service.getCartCount(function(res) {
-            $(".nav-item.cart-count").text(res || 0);
+            $(".cart-count").text("(" + res.data + ")" || "(0)");
         }, function(errMsg) {
-            $(".nav-item.cart-count").text(0);
+            $(".cart-count").text("(0)");
         })
     }
 

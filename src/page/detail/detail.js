@@ -62,7 +62,7 @@ var page = {
                 // alert(1);
                 window.location.href = "./result.html?type=add-cart";
             }, function(errMsg) {
-                mm.errHint(errMsg);
+                mm.errorHint(errMsg);
             })
         });
     },

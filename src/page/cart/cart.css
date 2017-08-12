@@ -1,0 +1,152 @@
+.cart-head {
+    margin-top: 10px;
+    width: 100%;
+    background-color: #e3e3e3;
+    font-size: 0px;
+}
+
+.cart-head .c-item {
+    display: inline-block;
+    width: 10%;
+    padding: 2px;
+    box-sizing: border-box;
+    font-size: 17px;
+    text-align: center;
+}
+
+.cart-head .c-product-info {
+    width: 45%;
+    text-align: left;
+}
+
+.cart-head .c-number {
+    width: 15%;
+}
+
+
+/* cart-list  */
+
+.cart-list .list-item {
+    background-color: #efefef;
+    font-size: 0;
+    margin-top: 10px;
+}
+
+.list-item .c-item {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10%;
+    box-sizing: border-box;
+    font-size: 17px;
+    text-align: center;
+}
+
+.list-item .c-select {
+    padding-left: 30px;
+}
+
+.list-item .c-img {
+    width: 8%;
+    margin: 4px 0;
+}
+
+.list-item .c-img img {
+    display: inline-block;
+    width: 100%;
+    height: 82px;
+}
+
+.list-item .c-product-info {
+    width: 37%;
+    text-align: left;
+}
+
+.list-item .c-product-info .info {
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 20px;
+    display: inline-block;
+    height: 82px;
+    font-size: 15px;
+    /* vertical-align: middle; */
+    /* line-height: 82px; */
+    word-wrap: break-word;
+    text-decoration: none;
+    color: #9b9b9b;
+}
+
+.list-item .c-product-info .info:hover {
+    color: #c60023;
+}
+
+.list-item .c-number {
+    width: 15%;
+}
+
+.list-item .c-number .c-btn {
+    display: inline-block;
+    width: 20px;
+    height: 25px;
+    font-size: 15px;
+    background-color: #ffffff;
+    border: 1px solid #dfdfdf;
+    cursor: pointer;
+}
+
+.list-item .c-number>input {
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    user-select: none;
+}
+
+.list-item .c-operate {
+    cursor: pointer;
+}
+
+.list-item .c-operate:hover {
+    color: #c60023;
+}
+
+
+/* cart-footer  */
+
+.cart-footer {
+    position: relative;
+    margin-top: 10px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #e1e1e1;
+}
+
+.cart-footer .c-item {
+    display: inline-block;
+    position: absolute;
+    vertical-align: middle;
+}
+
+.cart-footer .c-select-all {
+    left: 30px;
+}
+
+.cart-footer .delete-all {
+    left: 100px;
+    font-size: 10px;
+    color: #a5a5a5;
+    cursor: pointer;
+}
+
+.cart-footer .delete-all:hover {
+    color: #c60023;
+}
+
+.cart-footer .total {
+    left: 850px;
+    color: #c60023;
+}
+
+.cart-footer .submit {
+    /* left: 1000px; */
+    right: 0px;
+}
