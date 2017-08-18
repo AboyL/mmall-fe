@@ -2,6 +2,10 @@ require("./paging.css");
 var template = require("./paging.string");
 var mm = require("util/mm.js");
 paging = function(pagingData) {
+    // 如果没有商品或者只有一页,则不显示分页器
+    if (pagingData.pages <= 1) {
+        return;
+    }
     this.pageRange = 3; //显示的范围
     // 获得显示页数
     pagingData.list = [];

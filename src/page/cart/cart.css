@@ -150,3 +150,19 @@
     /* left: 1000px; */
     right: 0px;
 }
+
+
+/* 当没有商品时  */
+
+.cart>p {
+    color: #9f4e44;
+    font-size: 30px;
+    margin: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cart>.link {
+    display: block;
+    text-align: center;
+}

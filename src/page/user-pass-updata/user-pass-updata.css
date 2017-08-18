@@ -13,6 +13,13 @@
     margin: 15px;
 }
 
+.panel .item .label {
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+    margin-right: 20px;
+}
+
 .panel input {
     font-size: inherit;
 }

@@ -9,7 +9,7 @@ var getHtmlConfig = function(name, title) {
         title: title,
         inject: true,
         hash: true,
-        chunks: ['common', name]
+        chunks: [name, 'common']
     };
 };
 // 环境变量配置，dev / online
@@ -23,6 +23,9 @@ var config = {
         "list": ["./src/./page/list/list.js"],
         "detail": ["./src/./page/detail/detail.js"],
         "cart": ["./src/./page/cart/cart.js"],
+        "order-confirm": ["./src/./page/order-confirm/order-confirm.js"],
+        "order-list": ["./src/./page/order-list/order-list.js"],
+        "order-detail": ["./src/./page/order-detail/order-detail.js"],
         "login": ["./src/page/user-login/user-login.js"],
         "register": ["./src/page/user-register/user-register.js"],
         "passwordReset": ["./src/page/passwordReset/passwordReset.js"],
@@ -64,6 +67,9 @@ var config = {
         new htmlWebpackPlugin(getHtmlConfig("list", "商品列表")),
         new htmlWebpackPlugin(getHtmlConfig("detail", "商品详情")),
         new htmlWebpackPlugin(getHtmlConfig("cart", "购物车")),
+        new htmlWebpackPlugin(getHtmlConfig("order-confirm", "订单确认")),
+        new htmlWebpackPlugin(getHtmlConfig("order-list", "订单列表")),
+        new htmlWebpackPlugin(getHtmlConfig("order-detail", "订单详情")),
         new htmlWebpackPlugin(getHtmlConfig("login", "登录")),
         new htmlWebpackPlugin(getHtmlConfig("register", "注册")),
         new htmlWebpackPlugin(getHtmlConfig("passwordReset", "找回密码")),

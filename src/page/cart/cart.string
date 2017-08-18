@@ -1,3 +1,4 @@
+ {{#cartProductVoList}}
 <!-- cart-head  -->
 <div class="cart-head">
     <div class="c-select-all c-item">
@@ -31,10 +32,13 @@
             <input type="checkbox" checked> {{/productChecked}} {{^productChecked}} <input type="checkbox"> {{/productChecked}}
         </div>
         <div class="c-img c-item">
-            <img src="{{imageHost}}{{productMainImage}}" alt="{{productName}}">
+            <a href="./detail.html?productId={{productId}}">
+                <img src="{{imageHost}}{{productMainImage}}" alt="{{productName}}">
+
+            </a>
         </div>
         <div class="c-product-info c-item">
-            <a class="info" href="./index.html">{{productName}}</a>
+            <a class="info" href="./detail.html?productId={{productId}}">{{productName}}</a>
         </div>
         <div class="c-price c-item">
             <span>￥{{productPrice}}</span>
@@ -55,6 +59,7 @@
 
 </div>
 <!-- cart-footer  -->
+
 <div class="cart-footer ">
     <div class="c-select-all c-item ">
         {{#allChecked}}
@@ -70,3 +75,7 @@
     <div class="submit btn c-item ">去结账</div>
 </div>
 </div>
+{{/cartProductVoList}}
+<!-- 如果购物车里面没有东西显示  -->
+{{^cartProductVoList}}
+<p>购物车中空空如也,快去选购吧</p><a href="./index.html" class="link">前往商品页面</a> {{/cartProductVoList}}

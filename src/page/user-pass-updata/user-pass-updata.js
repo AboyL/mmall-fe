@@ -22,7 +22,7 @@ var page = {
     submit: function() {
         var passwordOld = $("#password-old").val();
         var passwordNew = $("#password-new").val();
-        var passwordComfirm = $("#password-comfirm").val();
+        var passwordComfirm = $("#password-confirm").val();
         var data = {
             passwordOld: passwordOld,
             passwordNew: passwordNew,

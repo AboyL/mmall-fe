@@ -66,7 +66,6 @@ var mm = {
     // 验证信息，对非空，字符串，手机号码
     validate: function(value, type) {
         value = $.trim(value);
-
         //验证非空
         if (type === "notEmpty") {
             return !!value;

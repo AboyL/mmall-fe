@@ -7,7 +7,7 @@ var navSide = {
         name: '',
         navList: [
             { "name": "user-center", "desc": "个人中心", "href": "./user-center.html" },
-            { "name": "order-navList", "desc": "我的订单", "href": "./order-navList.html" },
+            { "name": "order-list", "desc": "我的订单", "href": "./order-list.html" },
             { "name": "user-pass-updata", "desc": "修改密码", "href": "./user-pass-updata.html" },
             { "name": "about", "desc": "关于MMALL", "href": "./about.html" }
         ]

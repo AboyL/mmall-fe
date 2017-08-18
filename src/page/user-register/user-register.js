@@ -50,7 +50,7 @@ var register = {
         var data = {
             username: $.trim($("#user-name").val()),
             pssword: $.trim($("#user-password").val()),
-            passwordConfirm: $.trim($("#user-password-comfirm").val()),
+            passwordConfirm: $.trim($("#user-password-confirm").val()),
             phone: $.trim($("#phone").val()),
             email: $.trim($("#email").val()),
             question: $.trim($("#question").val()),

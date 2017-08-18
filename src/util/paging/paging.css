@@ -2,11 +2,12 @@
     display: block;
     float: right;
     user-select: none;
+    margin-bottom: 20px;
 }
 
 .paging-item {
     display: inline-block;
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #c6c6c6;
     background-color: #c6c6c6;
     cursor: pointer;

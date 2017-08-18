@@ -197,7 +197,7 @@ var page = {
                 console.log(_this.data);
                 if (data.cartTotalPrice > 0) {
                     // 大于0才提交。跳转页面
-                    window.location.href = "./comfirm.html"
+                    window.location.href = "./order-confirm.html"
                 }
             }
         })

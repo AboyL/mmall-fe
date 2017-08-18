@@ -26,21 +26,15 @@
                     <!--内容  -->
                     <div class="content with-nav">
                         <div class="panel">
-                            <div class="title">修改密码</div>
+                            <div class="title">
+                                <%= htmlWebpackPlugin.options.title %>
+                            </div>
+                            <div class="order-list-con">
+                                <div class="loading"></div>
+                            </div>
 
-                            <div class="item">
-                                <span class="label">原密码:</span>
-                                <input type="password" id="password-old" placeholder="请输入原密码">
-                            </div>
-                            <div class="item">
-                                <span class="label">新密码:</span>
-                                <input type="password" id="password-new" placeholder="请输入新密码">
-                            </div>
-                            <div class="item">
-                                <span class="label">确认密码:</span>
-                                <input type="password" id="password-confirm" placeholder="请确认密码">
-                            </div>
-                            <div class="btn item" id="submit">提交</div>
+                        </div>
+                        <div class="paging">
                         </div>
                     </div>
             </div>
