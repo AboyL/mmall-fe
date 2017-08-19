@@ -9,7 +9,11 @@ navSide.init({
 });
 // 让所有的链接点开后都是跳到新的页面
 $(function() {
-    $(window).load(function() {
+    // $(window).load(function() {
+    //     $("a").attr("target", "_blank");
+    // });
+    $(document).on("click", "a", function() {
         $("a").attr("target", "_blank");
-    })
+
+    });
 });

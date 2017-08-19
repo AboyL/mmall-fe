@@ -130,3 +130,15 @@ input[type="checkbox"] {
     border-bottom: 1px solid red;
     padding-bottom: 10px;
 }
+
+
+/* 错误提示  */
+
+.err-tips {
+    margin-top: 30px;
+    padding: 30px;
+    font-size: 30px;
+    background-color: #eaeaea;
+    color: red;
+    text-align: center;
+}
