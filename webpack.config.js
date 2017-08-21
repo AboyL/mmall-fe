@@ -39,7 +39,9 @@ var config = {
     },
     output: {
         path: __dirname + '/dist/',
-        publicPath: WEBPACK_ENV === "dev" ? "/dist/" : "//s.happymall.com/mmall-fe/dist/", //上线or测试
+        // publicPath: WEBPACK_ENV === "dev" ? "/dist/" : "//s.happymall.com/mmall-fe/dist/", //上线or测试
+        // publicPath: '/dist/',
+        publicPath: WEBPACK_ENV === "dev" ? "/dist/" : "//localhost:8080/mmall/dist/", //tomcat测试版本      
         filename: "js/[name].js"
     },
     externals: {
