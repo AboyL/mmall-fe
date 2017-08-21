@@ -7,6 +7,7 @@ var getHtmlConfig = function(name, title) {
         template: './src/view/' + name + '.html',
         filename: 'view/' + name + '.html',
         title: title,
+        favicon: "./favicon.jpg",
         inject: true,
         hash: true,
         chunks: [name, 'common']
@@ -34,10 +35,11 @@ var config = {
         "user-center-updata": ["./src/page/user-center-updata/user-center-updata.js"],
         "user-pass-updata": ["./src/page/user-pass-updata/user-pass-updata.js"],
         "result": ["./src/page/result/result.js"],
+        "about": ["./src/page/about/about.js"],
     },
     output: {
         path: __dirname + '/dist/',
-        publicPath: "/dist/", //其实这个也可以,但是那个是我们的最终上线版本更好用
+        publicPath: WEBPACK_ENV === "dev" ? "/dist/" : "//s.happymall.com/mmall-fe/dist/", //上线or测试
         filename: "js/[name].js"
     },
     externals: {
@@ -52,7 +54,11 @@ var config = {
             loader: 'url-loader?limit=100&name=resource/[name].[ext]'
         }, {
             test: /\.string$/,
-            loader: "html-loader"
+            loader: "html-loader",
+            query: {
+                minimize: true,
+                removerAttributeQuotes: false
+            }
         }]
     },
     plugins: [
@@ -78,7 +84,8 @@ var config = {
         new htmlWebpackPlugin(getHtmlConfig("user-center", "个人中心")),
         new htmlWebpackPlugin(getHtmlConfig("user-center-updata", "修改个人信息")),
         new htmlWebpackPlugin(getHtmlConfig("user-pass-updata", "修改密码")),
-        new htmlWebpackPlugin(getHtmlConfig("result", "处理返回结果"))
+        new htmlWebpackPlugin(getHtmlConfig("result", "处理返回结果")),
+        new htmlWebpackPlugin(getHtmlConfig("about", "关于mmall")),
     ],
     //  配置别名,我们就可以直接用这个了
     resolve: {

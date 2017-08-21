@@ -8,12 +8,12 @@ navSide.init({
     name: "user-center"
 });
 // 让所有的链接点开后都是跳到新的页面
-$(function() {
-    // $(window).load(function() {
-    //     $("a").attr("target", "_blank");
-    // });
-    $(document).on("click", "a", function() {
-        $("a").attr("target", "_blank");
+// $(function() {
+//     // $(window).load(function() {
+//     //     $("a").attr("target", "_blank");
+//     // });
+//     $(document).on("click", "a", function() {
+//         $("a").attr("target", "_blank");
 
-    });
-});
+//     });
+// });
