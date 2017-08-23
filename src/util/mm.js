@@ -14,6 +14,7 @@ var mm = {
         $.ajax({
             type: param.method || "get",
             url: param.url || '',
+            // url: 'http://' + param.url || '',
             dataType: param.dataType || 'json',
             data: param.data,
             success: function(res) {
@@ -41,6 +42,7 @@ var mm = {
     //获取服务器地址
     getServerUrl: function(path) {
         return conf.serverHost + path;
+        // return "happymmall.com:80/" + path;
     },
     getUrlParam: function(name) {
         // 得到某个url中某个参数的值

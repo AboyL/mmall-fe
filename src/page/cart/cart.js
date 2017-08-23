@@ -156,7 +156,7 @@ var page = {
             } else {
                 return;
             }
-        })
+        });
     },
     // 删除选中项
     deleteCheckedProduct: function(_this) {
@@ -186,7 +186,7 @@ var page = {
             } else {
                 return;
             }
-        })
+        });
     },
     // 进行提交
     submit: function(_this) {

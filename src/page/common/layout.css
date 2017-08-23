@@ -112,7 +112,8 @@ input[type="checkbox"] {
 .crumbs {
     color: #999;
     font-size: 19px;
-    background-color: #c1c1c1;
+    background-color: rgba(220, 215, 215, 0.75);
+    background: linear-gradient(rgba(200, 196, 196, 0.30), rgba(151, 149, 149, 0.60));
     padding: 10px 100px;
     border-top: 2px solid #ff170b;
 }

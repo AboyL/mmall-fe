@@ -31,7 +31,7 @@ var page = {
         // 定期检查
         window.setInterval(function() {
             payService.getOrderStatus(_this.data.orderNo, function(res) {
-                if (res.data == true) {
+                if (res.data === true) {
                     window.location.href = './result.html?type=payment&orderNo=' + _this.data.orderNo;
                 }
             }, function(errMsg) {

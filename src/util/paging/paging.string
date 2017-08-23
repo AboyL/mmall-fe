@@ -24,4 +24,4 @@
 <!-- 返回最后一页  -->
 <div class="paging-item" data-value={{pages}}>最后一页</div>
 <!-- 总显示  -->
-<span class="text">第{{pageNum}}/{{pages}}页</span>
+<span class="text">&nbsp;&nbsp;第{{pageNum}}/{{pages}}页</span>

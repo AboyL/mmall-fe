@@ -10,4 +10,4 @@ $(function() {
         var orderNo = mm.getUrlParam("orderNo");
         $(".order").attr("href", $(".order").attr("href") + orderNo);
     }
-})
+});

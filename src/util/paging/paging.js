@@ -9,7 +9,7 @@ paging = function(pagingData) {
     this.pageRange = 3; //显示的范围
     // 获得显示页数
     pagingData.list = [];
-    for (let i = pagingData.pageNum - this.pageRange; i <= pagingData.pageNum + this.pageRange; i++) {
+    for (var i = pagingData.pageNum - this.pageRange; i <= pagingData.pageNum + this.pageRange; i++) {
         // 前面没有了或者后面没有了
         if (i <= 0 || i > pagingData.pages) {
             continue;

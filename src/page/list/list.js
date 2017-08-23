@@ -1,5 +1,5 @@
 require("./list.css");
-var navSide = require("../common/nav-side/nav-side.js")
+var navSide = require("../common/nav-side/nav-side.js");
 var mm = require("util/mm.js");
 var productService = require("service/product-service.js");
 var template = require("./list.string");
