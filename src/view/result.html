@@ -3,7 +3,7 @@
 <head>
     <%= require("html-loader!./layout/head-common.html") %>
         <title>
-            <%= htmlWebpackPlugin.options.title %>
+            <%= htmlWebpackPlugin.options.title %>-L-MMALL电商平台
         </title>
 </head>
 
@@ -26,6 +26,32 @@
                 </h1>
                 <div class="result-content">
                     <a href="./index.html" class="link">回到首页</a>
+                </div>
+            </div>
+            <div class="resultCon password-reset-success">
+                <h1 class="result-title">
+                    恭喜你，修改密码成功
+                </h1>
+                <div class="result-content">
+                    <a href="./index.html" class="link">回到首页</a>
+                </div>
+            </div>
+            <div class="resultCon add-cart-success">
+                <h1 class="result-title">
+                    恭喜你,添加购物车成功
+                </h1>
+                <div class="result-content">
+                    <a href="./index.html" class="link">回到首页</a>
+                    <a href="./cart.html" class="link">查看购物车</a>
+                </div>
+            </div>
+            <div class="resultCon payment-success">
+                <h1 class="result-title">
+                    恭喜你,支付成功
+                </h1>
+                <div class="result-content">
+                    <a href="./index.html" class="link">回到首页</a>
+                    <a href="./order-detail.html?orderNo=" class="link order">查看订单</a>
                 </div>
             </div>
         </div>

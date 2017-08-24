@@ -1,0 +1,13 @@
+{{#list}}
+<div class="product">
+
+    <a class="link" href="./detail.html?productId={{id}}" target="_blank">
+        <img src="{{imageHost}}{{mainImage}}" alt="产品">
+        <div class="price">￥{{price}}</div>
+        <span class="productName">{{name}}</span>
+    </a>
+
+</div>
+{{/list}} {{^list}}
+<div class="err-tips">对不起没有找到您要的商品</div>
+{{/list}}

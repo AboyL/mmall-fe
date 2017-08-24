@@ -1,0 +1,125 @@
+.intro-con {
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.item {
+    display: inline-block;
+}
+
+.mainImg {
+    width: 420px;
+}
+
+.mainImg img {
+    width: 420px;
+    height: 300px;
+}
+
+.samllImgList {
+    width: 430px;
+    height: 102px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.samllImgList img {
+    display: inline-block;
+    width: 70px;
+    height: 100px;
+    margin-right: 10px;
+    border: 1px solid beige;
+    cursor: pointer;
+}
+
+.samllImgList img:hover {
+    border: 1px solid red;
+}
+
+.other {
+    vertical-align: top;
+    display: inline-block;
+    width: 600px;
+}
+
+.o-item {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.o-item.name {
+    font-size: 20px;
+}
+
+.o-item.subtitle {
+    color: red;
+}
+
+.o-item.price {
+    background-color: #efefef;
+}
+
+.cart .text {
+    font-size: 30px;
+}
+
+.cart input {
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.cart .calculate {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.cart .calculate .Cbtn {
+    display: block;
+    border: 1px solid #797979;
+    background-color: #ffffff;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.cart .cart-btn {
+    display: block;
+    width: 150px;
+    text-align: center;
+}
+
+
+/* 详情  */
+
+.detail-con .tab-list {
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+}
+
+.detail-con .tab-list .tab-item {
+    height: 40px;
+    font-size: 20px;
+    color: #ffffff;
+    line-height: 40px;
+    width: 100px;
+    text-align: center;
+}
+
+.detail-con .tab-list .tab-item.active {
+    background-color: #c60023;
+}
+
+.detail img {
+    margin: 0 auto;
+}
+
+.detail p {
+    text-align: center;
+    margin: 10px 0;
+}

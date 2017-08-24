@@ -1,0 +1,19 @@
+.paging {
+    display: block;
+    float: right;
+    user-select: none;
+    margin-bottom: 20px;
+}
+
+.paging-item {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #c6c6c6;
+    background-color: rgba(166, 164, 164, 0.14);
+    cursor: pointer;
+}
+
+.paging-item.active {
+    background-color: #f6f6f6;
+    border: none;
+}

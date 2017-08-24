@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%= require("html-loader!./layout/head-common.html") %>
+        <title>
+            <%= htmlWebpackPlugin.options.title %>-L-MMALL电商平台
+        </title>
+</head>
+
+<body>
+    <!-- 头部  -->
+    <%= require("html-loader!./layout/nav.html") %>
+        <%= require("html-loader!./layout/header.html") %>
+            <!-- 侧边  -->
+            <div class="crumbs">
+                <div><a href="./index.html" class="link">MMALL</a></a>&gt;
+                    <%= htmlWebpackPlugin.options.title %>
+                </div>
+
+            </div>
+            <div class="page-wrap w">
+                <!-- 排序按钮  -->
+                <ul class="sort-con">
+                    <li class="sort-item active" data-type="default">默认排序</li>
+                    <li class="sort-item" data-type="price">
+                        <span>价格</span>
+                        <i class="fa fa-sort-asc"></i>
+                        <i class="fa fa-sort-desc"></i>
+                    </li>
+                </ul>
+                <!-- 商品list  -->
+                <div class="list">
+                    <div class="loading"></div>
+                </div>
+                <!-- 分页器  -->
+                <div class="paging">
+                </div>
+            </div>
+
+            <%=   require("html-loader!./layout/footer.html")    %>
+</body>
+
+</html>

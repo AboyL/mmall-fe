@@ -1,0 +1,25 @@
+<div class="title">个人中心</div>
+<div class="userInfoCon">
+    <!-- <div class="loading"></div> -->
+    <div class="userInfoItem">
+        <span class="label">用户名：</span>
+        <span class="text">{{username}}</span>
+    </div>
+    <div class="userInfoItem">
+        <span class="label">手机号码：</span>
+        <span class="text">{{phone}}</span>
+    </div>
+    <div class="userInfoItem">
+        <span class="label">邮 箱：</span>
+        <span class="text">{{email}}</span>
+    </div>
+    <!-- <div class="userInfoItem">
+        <span class="label">问题：</span>
+        <span class="text">{{question}}</span>
+    </div>
+    <div class="userInfoItem">
+        <span class="label">答案：</span>
+        <span class="text">{{answer}}</span> -->
+</div>
+</div>
+<a class="btn" href="./user-center-updata.html">编辑个人信息</a>

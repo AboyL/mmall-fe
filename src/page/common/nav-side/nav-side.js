@@ -1,15 +1,15 @@
 require("./nav-side.css");
 
-var mmUtil = require('util/mmUtil.js');
+var mm = require('util/mm.js');
 var template = require("./nav-side.string");
 var navSide = {
     option: {
         name: '',
         navList: [
-            { "name": "user-centent", "desc": "个人中心", "herf": "./user-center.html" },
-            { "name": "order-navList", "desc": "我的订单", "herf": "./order-navList.html" },
-            { "name": "user-pass-updata", "desc": "修改密码", "herf": "./user-pass-updata.html" },
-            { "name": "about", "desc": "关于MMALL", "herf": "./about.html" }
+            { "name": "user-center", "desc": "个人中心", "href": "./user-center.html" },
+            { "name": "order-list", "desc": "我的订单", "href": "./order-list.html" },
+            { "name": "user-pass-updata", "desc": "修改密码", "href": "./user-pass-updata.html" },
+            { "name": "about", "desc": "关于MMALL", "href": "./about.html" }
         ]
     },
     init: function(option) {
@@ -22,12 +22,13 @@ var navSide = {
         for (var i = 0, l = this.option.navList.length; i < l; i++) {
             if (this.option.navList[i].name === this.option.name) {
                 this.option.navList[i].isActive = true;
-                console.log(i);
+            } else {
+                this.option.navList[i].isActive = false;
             }
 
         }
         // 渲染html
-        var side = mmUtil.renderHtml(template, {
+        var side = mm.renderHtml(template, {
             navList: this.option.navList
         });
         $('.nav-side').html(side);

@@ -1,0 +1,120 @@
+.w {
+    margin-bottom: 20px;
+}
+
+.keywords-list {
+    float: left;
+    background-color: #424242;
+    width: 200px;
+    height: 350px;
+    padding: 5px 1px;
+}
+
+.keywords-list .keywords-item {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.keywords-list .keywords-item:hover {
+    background-color: #868686;
+}
+
+.keywords-list .keywords-item .link {
+    color: #ffffff;
+}
+
+.keywords-list .keywords-item .link:hover {
+    color: #e80012;
+}
+
+
+/* 轮播图  */
+
+.banner {
+    /* display: inline-block; */
+    margin-left: 10px;
+    float: left;
+    width: 830px;
+    height: 360px;
+    background-color: #eee;
+}
+
+.banner .loading {
+    margin-top: 150px;
+}
+
+.banner .banner-img {
+    width: 100%;
+    height: 360px;
+}
+
+
+/* floor  */
+
+.floor-wrap {
+    margin-bottom: 30px;
+}
+
+.floor-wrap .floor-title {
+    color: rgba(200, 242, 31, 0.86);
+    font-size: 30px;
+    line-height: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f5f98c;
+}
+
+
+/* 更改各楼层颜色  */
+
+.floor-wrap:nth-child(2) .floor-title {
+    color: #6bbcfe;
+    border-bottom: 2px solid #6bbcfe;
+}
+
+.floor-wrap:nth-child(3) .floor-title {
+    color: #d8f7a4;
+    border-bottom: 2px solid #d8f7a4;
+}
+
+.floor-wrap:nth-child(4) .floor-title {
+    color: #f58af9;
+    border-bottom: 2px solid #f58af9;
+}
+
+.floor-wrap:nth-child(5) .floor-title {
+    color: #ff330f;
+    border-bottom: 2px solid #ff330f;
+}
+
+.floor-wrap .floor-item {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    padding-top: 10px;
+    width: 200px;
+    height: 220px;
+    background-color: #ffffff;
+}
+
+
+/* 添加阴影效果  */
+
+.floor-wrap .floor-list .floor-item:hover {
+    box-shadow: 3px 3px 2px #cecece;
+}
+
+.floor-wrap a {
+    text-decoration: none;
+}
+
+.floor-wrap .floor-text {
+    padding-top: 10px;
+    margin-left: 5px;
+    color: #808080;
+    text-decoration: none;
+}
+
+.floor-wrap .floor-img {
+    width: 160px;
+    height: 180px;
+    margin: 5px 20px;
+}

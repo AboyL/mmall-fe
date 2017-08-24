@@ -1,13 +1,12 @@
-// 用于请求网络数据的工具
-
+// 各种工具
 //服务器地址
 var conf = {
-    serverHost: ''
+    serverHost: ""
 };
 // 添加hogan组件用于渲染
 // var Hogan = require("hogan");
 var Hogan = require('hogan.js');
-var mmUtil = {
+var mm = {
 
     //网络请求
     request: function(param) {
@@ -15,6 +14,7 @@ var mmUtil = {
         $.ajax({
             type: param.method || "get",
             url: param.url || '',
+            // url: 'http://' + param.url || '',
             dataType: param.dataType || 'json',
             data: param.data,
             success: function(res) {
@@ -23,20 +23,18 @@ var mmUtil = {
                     // 请求成功
                     //要注意的是这里的param.success跟这里的success没有任何关系，如果他是一个函数，我们就调用回调函数进行成功的处理
                     // && 有点if的味道，如果前面的是错误的，因为短路，所以不会执行后面的，如果前面的是对的，还是要执行后面的代码，这是一种简化
-                    typeof param.success === "function" && param.success(res.data, res.msg);
+                    typeof param.success === "function" && param.success(res);
                 } else if (res.status === 10) {
                     // 需要登录，需要跳转登录页
                     _this.doLogin();
                 } else if (res.status === 1) {
                     //请求数据错误，返回错误信息
-                    typeof param.err === "function" && param.err(res.msg);
+                    typeof param.error === "function" && param.error(res.msg);
                 }
-                console.log("success");
             },
             error: function(err) {
                 // 请求错误，比如哦404什么的,返回错误码
                 typeof param.error === "function" && param.error(err.status);
-                console.log("error");
             }
         })
 
@@ -44,22 +42,19 @@ var mmUtil = {
     //获取服务器地址
     getServerUrl: function(path) {
         return conf.serverHost + path;
+        // return "happymmall.com:80/" + path;
     },
     getUrlParam: function(name) {
         // 得到某个url中某个参数的值
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
         // alert(window.location.search);
         var result = window.location.search.substr(1).match(reg);
-        for (var i = 0; i < result.length; i++) {
-            console.log(result[i]);
-        }
         return result ? decodeURIComponent(result[2]) : '';
     },
     // 渲染html模版
     renderHtml: function(htmlTemplate, data) {
         var template = Hogan.compile(htmlTemplate),
             result = template.render(data);
-        console.log("object");
         return result;
     },
     // 成功提示
@@ -73,7 +68,6 @@ var mmUtil = {
     // 验证信息，对非空，字符串，手机号码
     validate: function(value, type) {
         value = $.trim(value);
-
         //验证非空
         if (type === "notEmpty") {
             return !!value;
@@ -83,8 +77,9 @@ var mmUtil = {
             return /^1\d{10}$/.test(value);
         }
         // 验证邮箱
-        if (type === "emaill") {
+        if (type === "email") {
             // return /^\w+@\w+(\.\w{2,}){1,3}$/.test(value);
+            // alert(/^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(value));
             return /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(value);
 
         }
@@ -101,4 +96,4 @@ var mmUtil = {
 }
 
 //暴露接口
-module.exports = mmUtil;
+module.exports = mm;

@@ -1,0 +1,26 @@
+<div class="title">个人中心</div>
+<div class="userInfoCon">
+    <div class="userInfoItem">
+        <span class="label">用户名：</span>
+        <span class="text">{{username}}</span>
+    </div>
+    <div class="userInfoItem">
+        <span class="label">手机号码：</span>
+        <input type="text" value="{{phone}}" id="phone">
+    </div>
+    <div class="userInfoItem">
+        <span class="label">邮 箱：</span>
+        <input type="text" value="{{email}}" id="email">
+
+    </div>
+    <div class="userInfoItem">
+        <span class="label">问题：</span>
+        <input type="text" value="{{question}}" id="question">
+
+    </div>
+    <div class="userInfoItem">
+        <span class="label">答案：</span>
+        <input type="text" value="{{answer}}" id="answer">
+    </div>
+</div>
+<div class="btn" id="submit">保存</div>
