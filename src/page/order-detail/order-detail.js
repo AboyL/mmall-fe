@@ -36,12 +36,23 @@ var page = {
         var html = "";
         var _this = this;
         orderProductService.getOrderDetail(_this.data.orderNo, function(res) {
+            _this.filter(res.data);
+            console.log(res.data);
             html = mm.renderHtml(templateList, res.data);
             $(".content").html(html);
         }, function(errMsg) {
             mm.errorHint(errMsg);
         });
     },
+    // 判断是否已经付款
+    filter: function(data) {
+        if (data.statusDesc === "未支付") {
+            // 为数据加上未付款
+            data.alreadyPay = false;
+        } else {
+            data.alreadyPay = true;
+        }
+    }
 }
 
 $(function() {

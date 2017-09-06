@@ -35,7 +35,7 @@ var page = {
                     shippingId: shippingId
                 }, function(res) {
                     // 调转到支付页面
-                    window.location.href = "./pay.html";
+                    window.location.href = "./pay.html?orderNo=" + res.data.orderNo;
                 }, function(errMsg) {
                     mm.errorHint("errMsg")
                 })

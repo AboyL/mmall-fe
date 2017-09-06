@@ -20,10 +20,10 @@
         <div class="info-item">
             <span class="order-paymentType text">支付方式:{{paymentTypeDesc}}</span>
         </div>
-        {{#status}}
-        <a class="btn" href="./pay.html?orderNo={{orderNo}}">去支付</a> {{/status}} {{#status}}
+        {{^alreadyPay}}
+        <a class="btn" href="./pay.html?orderNo={{orderNo}}">去支付</a> {{/alreadyPay}} {{^alreadyPay}}
         <div class="btn order-cancal">取消订单</div>
-        {{/status}}
+        {{/alreadyPay}}
     </div>
 </div>
 <div class="panel">
