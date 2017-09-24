@@ -2,10 +2,10 @@
 网上商城
 
 地址
-http://119.23.106.31
-或者访问域名
-http://aboyl.org
+访问域名
+http://mmall.aboyl.org
 附带了Nginx配置文件，如果要部署到自己的服务器上面可以把Nginx里面的/root/L/project地址以及域名改成自己的就好了
+进行了子域名配置，需要在nginx的conf目录下面创建一个vhost目录，然后把mmall.conf文件放入vhost中
 项目名称就是mmall也可以自己取
 里面的dist文件通过npm run dist生成,如果是windows系统，则使用npm run dist_win
 
