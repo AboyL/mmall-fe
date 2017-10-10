@@ -27,20 +27,28 @@ var page = {
     bindEvent: function() {
         var _this = this;
         // 点击关闭关闭添加新地址弹窗
-        $(document).on("click", ".close", function() {
+        // $(document).on("click", ".close", function() {
+        //     _this.$modal.hide();
+        // });
+        $(".close").off("click").click(function() {
             _this.$modal.hide();
+
         });
         // 提交地址信息
-        $(document).on("click", ".receiver-address-submit", function() {
+        $(document).off("click", ".receiver-address-submit").on("click", ".receiver-address-submit", function() {
+            console.log("点击");
             if (_this.option.isUpdate) {
                 // 更新地址
                 _this.updateAddress();
             } else {
                 // 新增地址
+                console.log("点击增加地址");
                 _this.addAddress();
 
             }
         });
+        // 在第一次点击的时候，因为事件绑定是异步的，所以此时才进行事件绑定，并执行，第二次点击的时候，会再进行一次事件绑定，但是
+        // 此时我们的元素已经绑定了一个click事件了，可以同时绑定多个click时间，因此等于现在绑定了多个事件，也就会执行多次
         // 当城市改变时,加载城市信息
         $(document).on("change", "#receiver-select-province", function() {
             var provinceName = ($(this).val());
@@ -81,8 +89,10 @@ var page = {
         var validated = this.validateForm(info);
         if (validated.isOk) {
             // 进行请求
+            console.log("验证通过");
             orderAddressService.addAddress(info, function(res) {
                 //    执行成功的回调函数
+                console.log("添加地址");
                 _this.option.onSuccess();
                 _this.hide();
             }, function(errMsg) {

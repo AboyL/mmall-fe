@@ -5,7 +5,7 @@
     <div class="order-info">
         <div class="info-item">
             <span class="order-number text">订单号:{{orderNo}}</span>
-            <span class="order-time text">订单创建事件:{{createTime}}</span>
+            <span class="order-time text">订单创建时间:{{createTime}}</span>
         </div>
         <div class="info-item">
             <span class="order-receiverInfo text">收件人:
