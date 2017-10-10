@@ -35,8 +35,19 @@ var page = {
 
         });
         // 提交地址信息
-        $(document).off("click", ".receiver-address-submit").on("click", ".receiver-address-submit", function() {
-            console.log("点击");
+        // $(document).off("click", ".receiver-address-submit").on("click", ".receiver-address-submit", function() {
+        //     console.log("点击");
+        //     if (_this.option.isUpdate) {
+        //         // 更新地址
+        //         _this.updateAddress();
+        //     } else {
+        //         // 新增地址
+        //         console.log("点击增加地址");
+        //         _this.addAddress();
+
+        //     }
+        // });
+        $(".receiver-address-submit").click(function() {
             if (_this.option.isUpdate) {
                 // 更新地址
                 _this.updateAddress();
@@ -50,6 +61,7 @@ var page = {
         // 在第一次点击的时候，因为事件绑定是异步的，所以此时才进行事件绑定，并执行，第二次点击的时候，会再进行一次事件绑定，但是
         // 此时我们的元素已经绑定了一个click事件了，可以同时绑定多个click时间，因此等于现在绑定了多个事件，也就会执行多次
         // 当城市改变时,加载城市信息
+        // 如果我们只使用click而不是进行事件委托监听，因为click事件只能有一个，所以也是ok的
         $(document).on("change", "#receiver-select-province", function() {
             var provinceName = ($(this).val());
             _this.loadCitys(provinceName);
