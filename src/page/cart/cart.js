@@ -146,8 +146,9 @@ var page = {
             var $this = $(this);
             // 弹出一个提示框确认删除
             if (window.confirm("确认要删除吗")) {
-                cartService.deleteProduct(productId, function(res) {
+                cartService.deleteProduct($this.parents(".list-item").data("product-id"), function(res) {
                     // 重新渲染页面
+                    // console.log("删除");
                     _this.loadCart();
 
                 }, function(errMsg) {
@@ -167,9 +168,9 @@ var page = {
 
                 // 取到所有的选中的项目的id
                 var checkedProduct = $(".c-select input:checked").parents(".list-item");
-                console.log(checkedProduct);
+                // console.log(checkedProduct);
                 var cpIds = [];
-                console.log(checkedProduct.length);
+                // console.log(checkedProduct.length);
                 for (var i = 0; i < checkedProduct.length; i++) {
                     cpIds.push(checkedProduct.eq(i).data("product-id"));
                 }

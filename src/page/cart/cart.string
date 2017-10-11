@@ -1,4 +1,6 @@
 <!-- cart-head  -->
+<!-- 如果购物车有东西  -->
+{{#cartProductVoList}}
 <div class="cart-head">
     <div class="c-select-all c-item">
         {{#allChecked}}
@@ -74,6 +76,7 @@
     <div class="submit btn c-item ">去结账</div>
 </div>
 </div>
+{{/cartProductVoList}}
 <!-- 如果购物车里面没有东西显示  -->
 {{^cartProductVoList}}
 <p>购物车中空空如也,快去选购吧</p><a href="./index.html" class="link">前往商品页面</a> {{/cartProductVoList}}
