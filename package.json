@@ -4,11 +4,11 @@
     "description": "网上商城",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "WEBPACK_ENV=dev webpack-dev-server --inline --port 8088",
-        "dev_win": "set WEBPACK_ENV=dev&&webpack-dev-server --inline --port 8088",
-        "dist": "WEBPACK_ENV=online webpack -p",
-        "dist_win": "set WEBPACK_ENV=online&&webpack -p"
+        "start": "yarn dev",
+        "dev": "./node_modules/.bin/webpack-dev-server",
+        "dev_win": "./node_modules/.bin/webpack-dev-server",
+        "dist": "WEBPACK_ENV=online ./node_modules/.bin/webpack -p",
+        "dist_win": "set WEBPACK_ENV=online&& ./node_modules/.bin/webpack -p"
     },
     "repository": {
         "type": "git",
@@ -21,20 +21,19 @@
     },
     "homepage": "https://github.com/ABoyL/mmall-fe#readme",
     "devDependencies": {
-        "css-loader": "^0.28.4",
-        "extract-text-webpack-plugin": "^1.0.1",
-        "file-loader": "^0.11.2",
-        "html-loader": "^0.4.5",
-        "html-webpack-plugin": "^2.29.0",
-        "style-loader": "^0.18.2",
-        "url-loader": "^0.5.9",
-        "webpack": "^1.15.0",
-        "webpack-dev-server": "^1.16.5"
+        "file-loader": "^1.1.11",
+        "html-loader": "^0.5.5",
+        "html-webpack-plugin": "^3.1.0",
+        "url-loader": "^1.0.1",
+        "webpack": "^4.2.0",
+        "webpack-cli": "^2.0.13",
+        "webpack-dev-server": "^3.1.1"
     },
     "dependencies": {
-        "color-picker": "0.0.1",
+        "css-loader": "^1.0.0",
         "font-awesome": "^4.7.0",
-        "hogan": "^1.0.2",
-        "hogan.js": "^3.0.2"
+        "hogan.js": "^3.0.2",
+        "mini-css-extract-plugin": "^0.4.2",
+        "style-loader": "^0.23.0"
     }
 }
