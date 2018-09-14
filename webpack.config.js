@@ -57,7 +57,7 @@ let config = {
     output: {
         path: __dirname + '/dist/', // 4.x 默认就是/dist/
         // publicPath: WEBPACK_ENV === "dev" ? "/dist/" : "//s.happymall.com/mmall-fe/dist/", //上线or测试
-        publicPath: WEBPACK_ENV === "dev" ? "/dist/" : "/dist/", //请用happymmall的接口的时候用的        
+        publicPath: WEBPACK_ENV === "dev" ? "/dist/" : "/", //请用happymmall的接口的时候用的        
         // publicPath: '/dist/',
         // publicPath: WEBPACK_ENV === "dev" ? "/dist/" : "//localhost:8080/mmall/dist/", //tomcat测试版本      
         filename: "js/[name].js"
@@ -77,13 +77,6 @@ let config = {
                 "style-loader",
                 "css-loader"
             ]
-            // use: [{
-            //         loader: "style-loader/url"
-            //     },
-            //     {
-            //         loader: "css-loader"
-            //     }
-            // ]
         }, {
             test: /\.(png|jpg|gif)$/,
             use: [{
